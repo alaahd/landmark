@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Landmark Assignment</title>
+    <script src="https://use.fontawesome.com/e5a3fbcace.js"></script>
+    <link type="text/css" rel="stylesheet" href="css/app.css" />
+</head>
+<body>
+    <header>
+        Welcome to Tango !
+    </header>
+    <div id="wrapper">
+        <section id="main">
+            <div class="header">
+                <h2>State thy name and ye shall pass</h2>
+                <h3>Not a member yet? <a href="#">Register</a> now — it's fun and easy!</h3>
+            </div>
+            <div class="body form">
+                <ul>
+                    <li>
+                        <form name="login" method="post">
+                            <div class="field"><input name="user[username]" type="text" placeholder="Username" /></div>
+                            <div class="field"><input name="user[user_password]" type="password" placeholder="Password" /></div>
+                            <div class="field">
+                                <input checked type="checkbox" name="checkbox" id="user_remember" value="value">
+                                <label for="user_remember">Remember me</label>
+                                <button disabled type="submit" name="user[submit]" value="Login">Login</button>
+                            </div>
+                        </form>
+                    </li>
+                    <li>
+                        <span>or</span>
+                    </li>
+                    <li>
+                        <p>Facebook</p>
+                        <p>Twitter</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="secondary">
+            <div class="header">
+                <h2>Learn more!</h2>
+                <h3>Check out our demos and quick guides to our app</h3>
+            </div>
+            <div class="body video">
+                <ul>
+                    <li>
+                        <a class="cf" href="javascript:void(0)">
+                            <img src="images/thumbnail.jpg" />
+                            <div class="overlay">
+                                <i class="fa fa-play fa-3x"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <footer>
+        <p>website footer</p>
+    </footer>
+    <script src="js/app.js"></script>
+
+    <div class="blocker">
+        <div class="modal">
+            <div class="cover">
+                <img class="ratio" src="http://placehold.it/620x349"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

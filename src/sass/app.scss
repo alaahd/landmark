@@ -1,0 +1,239 @@
+@import "../reset";
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+$M: 768px;
+$container: 620px;
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  clear: both;
+}
+
+html {
+  //mobile first approach
+  font-size: 62.5%;
+  @media only screen and (min-width: $M) {
+    /* tablets and desktop */
+    font-size: 100%;
+  }
+}
+
+body {
+  background: #e2e2e2;
+  font-family: "Open Sans", sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+header, footer {
+  background: #333;
+  color: #FFFFFF;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+#wrapper {
+  max-width: $container;
+  margin: 0 auto;
+  section {
+    background: #FFFFFF;
+    margin-bottom: 2rem;
+
+    .header {
+      border-bottom: 1px solid #eeeeee;
+      text-align: center;
+      padding: 1rem;
+      h2 {
+        font-size: 1.25rem;
+        line-height: 1.5;
+        font-weight: bold;
+      }
+    }
+
+    .body {
+      padding: 2rem;
+    }
+  }
+}
+
+section#main {
+  .form {
+    & > ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      & > li:first-child {
+        flex: 0 1 60%;
+        form {
+          display: flex;
+          flex-direction: column;
+          .field {
+            margin: 0.5rem 0;
+            & > span {
+              font-size: 0.7rem;
+              padding: 0 0.5rem;
+              color: #cc0000;
+            }
+          }
+          .field:first-child {
+            margin-top: 0;
+          }
+          .field:last-child {
+            margin-bottom: 0;
+          }
+          input[type=text], input[type=password] {
+            padding: 0.4rem;
+            width: 60%;
+          }
+          button[type=submit] {
+            padding: 0.4rem 1rem;
+            border: none;
+            border-radius: 1rem;
+            cursor: pointer;
+            background: linear-gradient(#6dc0eb, #54b5e7);
+            color: #FFFFFF;
+            &[disabled] {
+              background: #cfcfcf;
+            }
+          }
+          label[for] {
+            font-size: 12px;
+          }
+        }
+      }
+      & > li:nth-child(2) {
+        align-self: stretch;
+        position: relative;
+        background: #eaeaea;
+        width: 1px;
+        span {
+          position: absolute;
+          display: block;
+          top: 50%;
+          transform: translate(-50%, -50%);
+          background: #FFFFFF;
+          padding: 0.5rem 0;
+        }
+      }
+    }
+  }
+}
+
+section#secondary {
+  .video {
+    ul > li {
+      position: relative;
+      overflow: hidden;
+
+      a > img {
+        transition: all .25s;
+      }
+      a:hover > img {
+        transform: scale(1.1);
+      }
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #FFFFFF;
+        &:after {
+          background: rgba(0, 0, 0, 0.35);
+          content: " ";
+          width: 100%;
+          height: 100%;
+          position: absolute;
+          opacity: 0;
+          transition: opacity .25s;
+        }
+        &:hover:after {
+          opacity: 1;
+        }
+        i.fa-play {
+          background: rgba(71, 194, 232, 0.8);
+          padding: 2rem;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 1;
+          color: rgba(255,255,255,0.75);
+        }
+      }
+    }
+  }
+}
+
+
+.blocker {
+  &.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  z-index: 5;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: rgba(0,0,0,0.6);
+  text-align: center;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.blocker:before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -.05em;
+}
+
+.modal {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 16;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: $container;
+  width: 100%;
+  overflow: auto;
+  background: #fff;
+  padding: 0;
+  text-align: left;
+}
+
